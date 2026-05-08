@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo...</title>
+</head>
+<body>
+
+<script>
+  // "ensucia" el historial para dificultar volver atrás
+  history.pushState(null, "", location.href);
+  history.pushState(null, "", location.href);
+
+  window.onpopstate = function () {
+    history.go(1);
+  };
+
+  // Redirección automática
+  setTimeout(() => {
+    window.location.replace("https://www.uniminuto.edu/");
+  }, 200);
+</script>
+
+<p style="font-family: Arial; text-align:center; margin-top:50px;">
+  Redirigiendo a UNIMINUTO...
+</p>
+
+</body>
+</html>
