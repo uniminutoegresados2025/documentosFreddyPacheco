@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diploma — UNIMINUTO Virtual</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy:   #1e2d5a;
+    --navy2:  #162248;
+    --yellow: #f5c518;
+    --bg:     #eef1f8;
+    --white:  #ffffff;
+    --muted:  #6b7a99;
+    --text:   #1a2744;
+    --border: rgba(30,45,90,0.13);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  .banner img { width: 100%; display: block; }
+
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1.4rem;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(30,45,90,0.08);
+    overflow: hidden;
+  }
+
+  .card-top {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  .btn {
+    background: var(--yellow);
+    color: var(--navy2);
+    font-weight: 800;
+    border: none;
+    padding: 0.55rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .pdf-view {
+    width: 100%;
+    height: 85vh;
+    border: none;
+  }
+
+  footer {
+    background: var(--navy2);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    margin-top: 3rem;
+  }
+  footer strong { color: var(--yellow); }
+</style>
+</head>
+
+<body>
+
+<header class="banner">
+  <img src="banner.jpg" alt="UNIMINUTO">
+</header>
+
+<div class="container">
+  <div class="card">
+    <div class="card-top">
+      <div class="title">Diploma</div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn" onclick="window.location.href='index.html'">Volver al inicio</button>
+      </div>
+    </div>
+
+    <iframe class="pdf-view" src="diploma.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+  </div>
+</div>
+
+<footer>
+  © 2026 <strong>UNIMINUTO</strong> Virtual — Portal de Egresados
+</footer>
+
+<script>
+  // Bloquear clic derecho
+  document.addEventListener("contextmenu", e => e.preventDefault());
+
+  // Bloquear teclas comunes de inspección/guardar/imprimir
+  document.addEventListener("keydown", function(e) {
+    if ((e.ctrlKey && (e.key === "s" || e.key === "p" || e.key === "u")) ||
+        (e.ctrlKey && e.shiftKey && (e.key === "i" || e.key === "j")) ||
+        (e.key === "F12")) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+</body>
+</html>
